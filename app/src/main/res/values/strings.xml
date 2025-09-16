@@ -1,0 +1,4 @@
+<resources>
+    <string name="device_admin_description">Enables the app to perform a secure data wipe.</string>
+    <string name="app_name">securewipe</string>
+</resources>
