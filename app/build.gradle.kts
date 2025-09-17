@@ -13,7 +13,6 @@ android {
         targetSdk = 24
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -43,27 +42,19 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.google.android.material:material:1.5.0")
 }
 
 configurations.all {
     resolutionStrategy {
-        // This is an EXAMPLE. Replace 'appcompat' with the library
-        // that is actually causing your error.
-
-        // For androidx.appcompat
         force("androidx.appcompat:appcompat:1.3.1")
-
-        // For com.google.android.material
         force("com.google.android.material:material:1.5.0")
-
-        // You can add more 'force' lines here if other libraries conflict
     }
 }

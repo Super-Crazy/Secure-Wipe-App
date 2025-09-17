@@ -109,13 +109,6 @@ class MainActivity : AppCompatActivity() {
         // triggers a Cryptographic Erase.
         // Before calling this, we would integrate the backend communication logic.
 
-        val generateCertificate = binding.generateCertificateSwitch.isChecked
-        if (generateCertificate) {
-            // TODO: Implement backend communication logic here (Part II)
-            // For now, we simulate a log message.
-            println("Certificate generation requested. Sending data to backend...")
-        }
-
         println("Initiating device wipe...")
 
         try {

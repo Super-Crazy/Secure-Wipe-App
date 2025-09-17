@@ -39,17 +39,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/statusValueTextView" />
 
-    <com.google.android.material.materialswitch.MaterialSwitch
-        android:id="@+id/generateCertificateSwitch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Generate Certificate of Sanitization"
-        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activateAdminButton" />
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/initiateWipeButton"
         style="@style/Widget.Material3.Button.UnelevatedButton"
