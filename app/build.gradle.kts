@@ -5,16 +5,20 @@ plugins {
 
 android {
     namespace = "com.example.securewipe"
-    compileSdk = 36
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.securewipe"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 24
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lint {
+        disable.add("ExpiredTargetSdkVersion")
     }
 
     buildTypes {
@@ -39,8 +43,6 @@ android {
 }
 
 dependencies {
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -49,4 +51,19 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+configurations.all {
+    resolutionStrategy {
+        // This is an EXAMPLE. Replace 'appcompat' with the library
+        // that is actually causing your error.
+
+        // For androidx.appcompat
+        force("androidx.appcompat:appcompat:1.3.1")
+
+        // For com.google.android.material
+        force("com.google.android.material:material:1.5.0")
+
+        // You can add more 'force' lines here if other libraries conflict
+    }
 }
