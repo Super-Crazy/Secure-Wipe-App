@@ -10,31 +10,30 @@ android {
     defaultConfig {
         applicationId = "com.example.securewipe"
         minSdk = 24
-        targetSdk = 24
+        targetSdk = 24 // This is the key for the legacy wipe permission
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // This block hides the irrelevant Play Store warnings
     lint {
         disable.add("ExpiredTargetSdkVersion")
+        disable.add("ObsoleteSdkTarget")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -42,19 +41,10 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    // These are the specific library versions for compatibility
+    implementation("androidx.core:core-ktx:1.7.0")
+    implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("com.google.android.material:material:1.5.0")
-}
-
-configurations.all {
-    resolutionStrategy {
-        force("androidx.appcompat:appcompat:1.3.1")
-        force("com.google.android.material:material:1.5.0")
-    }
+    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
+    implementation("androidx.activity:activity-ktx:1.4.0")
 }

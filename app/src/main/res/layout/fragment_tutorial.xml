@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to Use Secure Wipe"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Grant Permission"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="On the main screen, tap the 'Grant Permission' button. This will take you to a system screen where you must activate the app as a Device Administrator. This permission is essential for the wipe functionality to work."
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Initiate Secure Wipe"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Once admin rights are active, the 'Initiate Secure Wipe' button will appear. Tapping this will bring up a final confirmation dialog. This action is permanent and cannot be undone."
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:lineSpacingMultiplier="1.2"/>
+    </LinearLayout>
+</ScrollView>
